@@ -10,10 +10,19 @@ namespace test1
     {
         static void Main(string[] args)
         {
+           /* Console.WriteLine(tablica[0, 1]);
 
             try
             {
                 
+	{
+
+	}}
+                {
+                
+                
+                
+                }
                 int numer = Int32.Parse(Console.ReadLine());
 
 
@@ -40,6 +49,8 @@ namespace test1
 
            
             Main(args);
+           */
         }
+           
     }
 }
