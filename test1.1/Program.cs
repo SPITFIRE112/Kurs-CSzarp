@@ -10,18 +10,25 @@ namespace test1._1
         
     class Program
     {
-        public static char[,] tablica = new char[,]
-            {
-            { 'a', '@' },
-            { 'i', '&' },
-            { 'h', '#' },
-            { 's', '$' }
-            };
-            
+     
 
 
         static void Main(string[] args)
         {
+               char[,] tablica = new char[400, 2];
+           
+            
+        
+            string klucz = "3+p8eJrEQNb&RQyAN_xsfgm5NBSVXCB#?+?pJtS!!6KkkNcf4C9ZqtYsC&2j=6RecsEDTa-TFyV6G54TE*k%yq8TQB9yD"; // 93 characters to full security
+
+
+
+             for (int i = 0; i < klucz.Length; i++)
+			{
+                    tablica[i, 0] = (char)(i+33);
+                tablica[i, 1]= klucz[i];
+            }
+           
             
       
 			
@@ -33,10 +40,22 @@ namespace test1._1
 			{
                 Console.WriteLine("Zamieniam" + tablica [ i, 0]);
                 Console.WriteLine("na" + tablica[ i, 1]);
-                tekst = tekst.Replace("a","@");
+                tekst = tekst.Replace(tablica[i, 0], tablica[i, 1]);
+            }
+           Console.WriteLine("Zaszyfrowany");
+            Console.WriteLine(tekst);
+            Console.WriteLine("Odszyfrowany");
+
+              for (int i = 0; i < tekst.Length; i++)
+			{
+                Console.WriteLine("Zamieniam" + tablica [ i, 0]);
+                Console.WriteLine("na" + tablica[ i, 1]);
+                tekst = tekst.Replace(tablica[i, 0], tablica[i, 1]);
             }
            
-            Console.WriteLine(tekst);
+                Console.WriteLine(tekst);
+
+
             Main(args);
            
         }
